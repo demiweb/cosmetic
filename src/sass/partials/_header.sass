@@ -1,0 +1,16 @@
+.header
+  position: fixed
+  z-index: 10
+  left: 0
+  right: 0
+  top: 0  
+  &__inner
+    +flex(space-between)
+    height: $header-height
+    padding-top: $header-pt
+
+.header-contacts
+  color: $gray-lighten
+  &__link
+    font-weight: 700
+    margin-bottom: 5px

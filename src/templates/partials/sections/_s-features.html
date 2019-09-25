@@ -1,0 +1,63 @@
+{%set
+section = {
+  mod: 'pb-0',
+  id: 'features',
+  title: 'Переваги'
+}
+%}
+{%set
+features = [
+  {
+    icon: 'microphone',
+    title: 'завжди',
+    text: 'свіжі та актуальні теми'
+  },
+  {
+    icon: 'presentation',
+    title: 'кращі',
+    text: 'спікери України'
+  },
+  {
+    icon: 'blush',
+    title: 'багато',
+    text: 'теорії, ще більше практики'
+  },
+  {
+    icon: 'medal',
+    title: 'організація',
+    text: 'заходів на вищому рівні'
+  },
+  {
+    icon: 'user',
+    title: 'розбір',
+    text: 'проблем кожного
+з учасників індивідуально'
+  }
+]
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+<!-- begin features -->
+<div class="features">
+  {% for i in features %}
+  <div class="features__item">
+    <!-- begin feature -->
+    <div class="feature">
+      <div class="feature__icon">
+        {{ mixins.icon(i.icon) }}
+      </div>
+
+      <div class="feature__content">
+        <div class="feature__title">{{ i.title | safe }}</div>
+
+        <div class="feature__text">{{ i.text | safe }}</div>
+      </div>
+    </div>
+    <!-- end feature -->
+  </div>
+  {% endfor %}
+</div>
+<!-- end features -->
+{% endblock %}

@@ -1,0 +1,64 @@
+{%set
+section = {
+  id: 'testimonials',
+  mod: 'sectioin--dark',
+  title: 'Відгуки',
+  susbttl: 'ми пишаємося своєю школою, тому з гордістю ділимося
+відгуками наших клієнтів'
+}
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+<!-- begin testimonials -->
+<div class="testimonials slider__wrap slider--testimonials__wrap">
+  <div class="testimonials__slider">
+      <div class="slider slider--testimonials js-slider">
+        {% for i in range(0, 8) %}
+        <!-- begin slide -->
+        <div class="slide">
+          <div class="testimonials__img img js-lazy" data-background-image="./img/01_13.jpg"></div>
+        </div>
+        <!-- end slide -->
+        {% endfor %}
+      </div>
+  </div>
+
+  <div class="testimonials__content">
+    {% for i in range(0, 8) %}
+    <div class="testimonials__content-item">
+      <!-- begin testimonial-content -->
+      <div class="testimonial-content">
+        <div class="testimonial-content__social">
+          {{ mixins.list(
+            name = 'social',
+            modifications = { wrap: '', item: '', link: '' },
+            list = [
+              { link: mixins.icon('facebook-filled') }
+            ]
+          ) }}
+        </div>
+
+        <div class="testimonial-content__title">
+          <div class="title title--h2">Ольга Луценко</div>
+        </div>
+
+        <div class="testimonial-content__text">
+          Дякую за організацію площадки такого формату у Вінниці. 
+Вже з нетерпінням чекаю ваших заходів. Впевнена, вони 
+будуть для мене корисними
+        </div>
+      </div>
+      <!-- end testimonial-content -->
+    </div>
+    {% endfor %}
+
+    <div class="testimonials__controls">
+      <button class="slider__prev prev js-slider-prev"><i class="arrow"></i></button>
+      <button class="slider__next next js-slider-next"><i class="arrow"></i></button>
+    </div>
+  </div>
+</div>
+<!-- end testimonials -->
+{% endblock %}

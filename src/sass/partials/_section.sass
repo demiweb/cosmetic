@@ -1,0 +1,56 @@
+.section
+  padding-top: 65px
+  padding-bottom: 65px
+  &__title
+    margin-bottom: 20px
+    text-align: center
+    +md
+      margin-bottom: 15px
+  &__subttl
+    margin-bottom: 60px
+    text-align: center
+    max-width: 530px
+    margin-left: auto
+    margin-right: auto
+    +xl
+      margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 20px
+
+.section-block
+  +flex(flex-start, normal, row, wrap)
+  margin-left: -15px
+  margin-right: -15px
+  &__left
+    padding-top: 35px
+    padding-left: 15px
+    padding-right: 15px
+    position: relative
+    width: percentage(5/12)
+    +before
+      background-color: $black-light
+      position: absolute
+      top: 80px
+      left: 0
+      height: 60%
+      width: 50%
+      z-index: 0
+    +after
+      +image('black-pattern.png')
+      background-repeat: repeat
+      background-size: auto
+      position: absolute
+      z-index: 1
+      top: 0
+      height: 60%
+      width: 50%
+      left: 75px
+
+  &__right
+    padding-top: 35px
+    padding-left: 15px
+    padding-right: 15px
+    width: percentage(6/12)
+    margin-left: percentage(1/12)

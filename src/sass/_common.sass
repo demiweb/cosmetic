@@ -2,8 +2,9 @@ body
   background: $white
   line-height: 1.4
   font-size: $fz
+  font-weight: 400
   min-width: 320px
-  font-family: 'proximanova', Arial, sans-serif
+  font-family: 'Century Gothic', Arial, sans-serif
   color: $c-text
   +no-scroll
   +sm
@@ -17,4 +18,28 @@ body
 .lazy
   &.is-loaded:not(.no-animation)
     animation: fadeIn 1s
+
+.container
+  max-width: 1440px
+  padding-left: 15px
+  padding-right: 15px
+  margin-left: auto
+  margin-right: auto
+
+.img
+  position: relative
+  // display: inline-block
+  display: block
+  background-color: $c-text
+  +before
+    border: 4px solid $accent
+    border-bottom: 0
+    border-left: 0
+    position: absolute
+    width: 50%
+    height: 60%
+    top: -4px
+    right: -4px
+    z-index: -1
+    pointer-events: none
     

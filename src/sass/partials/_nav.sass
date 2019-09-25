@@ -1,0 +1,11 @@
+.nav
+  li
+    display: inline-block
+    +notlast
+      margin-right: 95px
+  a
+    +tr(color .3s)
+    +hover
+      color: $black-light
+    &.is-active
+      color: $black-light

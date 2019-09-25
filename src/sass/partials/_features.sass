@@ -1,0 +1,35 @@
+.features
+  +flex(center, normal, row, wrap)
+  margin-left: -15px
+  margin-right: -15px
+  padding-left: percentage(1/12)
+  &__item
+    padding-left: 15px
+    padding-right: 15px
+    width: 33.33333%
+    margin-bottom: 45px
+    +xl
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 15px
+
+.feature
+  +flex()
+  &__icon
+    +image('Circle.png')
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: contain
+    flex: 0 0 110px
+    color: #5c5c5c
+    .icon
+      font-size: 134px
+  &__content
+    padding-top: 60px
+    padding-left: 10px
+  &__title
+    font-weight: 700
+    font-size: 24px
+    color: $c-title
+  &__text
+    font-size: 18px

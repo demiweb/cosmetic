@@ -1,0 +1,45 @@
+{%set
+section = {
+  id: 'for-models',
+  title: 'Моделям',
+  susbttl: 'якщо ви бажаєте стати нашою моделлю залиште
+заявку та ми переглянемо її у найближчий час'
+}
+%}
+
+{%set
+form = {
+  fields: [
+    {
+      name: 'input',
+      type: 'text',
+      placeholder: 'Ім’я',
+      fieldClass: '',
+      label: { first: { title: mixins.icon('user'), noWrap: true } }
+    },
+    {
+      name: 'input',
+      type: 'tel',
+      placeholder: '+38 (_ _ _ ) - _ _ _ - _ _ - _ _',
+      fieldClass: '',
+      label: { first: { title: mixins.icon('phone'), noWrap: true } }
+    }
+  ]
+}
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+<!-- begin section-block -->
+<div class="section-block">
+  <div class="section-block__left">
+    <div class="section-block__img img js-lazy" data-background-image="./img/01_10.jpg"></div>
+  </div>
+
+  <div class="section-block__right">
+    {% include "partials/_form.html" %}
+  </div>
+</div>
+<!-- end section-block -->
+{% endblock %}

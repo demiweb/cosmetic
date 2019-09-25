@@ -5,4 +5,19 @@ h1, h2, h3, h4, h5, h6
   font-weight: 400
 
 .title
-  +css-lock(21, 45, 320, 1399, font-size)
+  +css-lock(21, 60, 320, 1399, font-size)
+  color: $c-title
+  +font-title
+  display: inline
+  position: relative
+  line-height: 1
+  +before
+    border-bottom: .04em solid  $accent
+    position: absolute
+    bottom: .15em  
+    left: 0
+    width: 100%
+    z-index: -1
+
+  &--gray-lighten
+    color: $gray-lighten

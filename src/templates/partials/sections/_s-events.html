@@ -1,0 +1,111 @@
+{%set
+section = {
+  id: 'events',
+  title: 'Події',
+  subttl: 'New level регулярно проводить тренінги, завдяки яким ви станете
+кращими у професіїї косметолога'
+}
+%}
+
+{% extends "layouts/_section.html" %}
+
+{% block content %}
+  <!-- begin events -->
+  <div class="events js-events">
+    <div class="section-block">
+      <div class="section-block__left">
+        <div class="events__slider">
+          <!-- begin slider -->
+          <div class="slider__wrap slider--events__wrap">
+            <div class="slider slider--events js-slider">
+              {% for i in range(0, 5) %}
+              <!-- begin slide -->
+                <div class="slide slide__img section-block__img img js-lazy js-events-img" data-background-image="./img/01_07.jpg"></div>
+              <!-- end slide -->
+              {% endfor %}
+            </div>
+
+            <div class="slider__controls">
+              <button class="slider__prev prev js-slider-prev">попередня подія <i class="arrow"></i></button>
+              <button class="slider__next next js-slider-next">Наступна подія <i class="arrow"></i></button>
+            </div>
+          </div>
+          <!-- end slider -->
+        </div>
+      </div>
+
+      <div class="section-block__right events__content-wrap">
+        {% for i in range(0, 5) %}
+        <div class="events__content js-events-content">
+          <!-- begin events-content -->
+          <div class="events-content">
+            <div class="events-content__date">{{ mixins.icon('clock-circular-outline') }}1 Жовтня 10:00</div>
+
+            <div class="events-content__title">
+              <div class="title title--h2">Юридичні аспекти в косметології</div>
+            </div>
+
+            <div class="events-content__text">тренінг підійде тим, хто бажає зв’язати своє життя з професією косметолог
+та задається питанням, які потрібні юридичні підтвердження, 
+аби не виникало пробем у майбутньому</div>
+
+            <div class="events-content__btns">
+              <div class="events-content__btn">
+                {{ mixins.btn(
+                  title = 'записатися на тренінг',
+                  mod = 'js-popup-open',
+                  href = false,
+                  attributes = { 'data-popup-target': 'application' }
+                ) }}
+              </div>
+              <div class="events-content__btn">
+                {{ mixins.btn(
+                  title = 'завантажити програму',
+                  mod = 'btn--link-ttu'
+                ) }}
+              </div>
+            </div>
+
+            <div class="events-content__speakers events-speakers">
+              <div class="events-speakers__title">
+                <div class="title title--h4">Спікери:</div>
+              </div>
+              
+              <div class="events-speakers__items">             
+
+                <!-- begin speaker -->
+                <div class="speaker">
+                  <div class="speaker__img">
+                    <img class="js-lazy" alt="" src="" data-src="./img/speaker.png"/>
+                  </div>
+
+                  <div class="speaker__title">Соколик Інна</div>
+
+                  <div class="speaker__subttl">адвокат в сфері 
+медичного бізнесу</div>
+                </div>
+                <!-- end speaker -->
+
+                <!-- begin speaker -->
+                <div class="speaker">
+                  <div class="speaker__img">
+                    <img class="js-lazy" alt="" src="" data-src="./img/speaker.png"/>
+                  </div>
+
+                  <div class="speaker__title">Олена Грабік</div>
+
+                  <div class="speaker__subttl">керуючий адвокат в адвокатському 
+бюро «Грабік Олена»</div>
+                </div>
+                <!-- end speaker -->
+              </div>
+            </div>
+          </div>
+          <!-- end events-content -->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- end events -->
+{% endblock %}

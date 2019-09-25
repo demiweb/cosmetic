@@ -1,5 +1,52 @@
 <!-- begin hero -->
 <section class="hero">
-  <h1>hello from hero</h1>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__left">
+        <div class="hero__logo">
+          <img class="js-lazy" alt="" src="" width="385" height="237" data-src="./img/logo.svg"/>
+        </div>
+
+        <div class="hero__text">простір для вдосконалення навичок та розвитку 
+косметологів Вінниці та України. </div>
+
+        <div class="hero__btns">
+          <div class="hero__btn">
+            {{ mixins.btn(
+              title = 'Хочу на тренінг',
+              mod = 'js-popup-open',
+              href = false,
+              attributes = { 'data-popup-target': 'application' }
+            ) }}
+          </div>
+
+          <div class="hero__btn">
+            {{ mixins.btn(
+              title = 'дізнатися про академію',
+              noClass = true,
+              mod = 'btn-link',
+              href = '#features'
+            ) }}
+          </div>
+        </div>
+
+        <div class="hero__social">
+          Слідкувати за нами:
+          {{ mixins.list(
+            name = 'social',
+            modifications = { wrap: '', item: '', link: '' },
+            list = [              
+              { link: mixins.icon('instagram') },
+              { link: mixins.icon('facebook') }
+            ]
+          ) }}
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__img img js-lazy" data-background-image="./img/01_03.jpg"></div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- end hero -->

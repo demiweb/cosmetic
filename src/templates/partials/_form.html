@@ -1,0 +1,34 @@
+<!-- begin form -->
+<div class="form">
+  <form>
+    <div class="form__title">
+      <div class="title title--h2">Форма заявки</div>
+    </div>
+
+    <div class="form__subttl">залиште ваші дані та наш менеджер 
+зв’яжеться з вами у найближчий час</div>
+
+    {% for i in form.fields %}
+    <div class="form__field">
+      {{ mixins.input(
+        name = i.name,
+        mod = '',
+        type = i.type,
+        placeholder = i.placeholder,
+        value = '',
+        fieldClass = i.fieldClass,
+        label = i.label
+      ) }}
+    </div>
+    {% endfor %}
+
+    <div class="form__field">
+      {{ mixins.btn(
+        title = 'Залишити заявку',
+        mod = '',
+        href = false
+      ) }}
+    </div>
+  </form>
+</div>
+<!-- end form -->

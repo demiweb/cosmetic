@@ -1,5 +1,44 @@
 <!-- begin footer -->
 <footer class="footer">
-  hello from footer
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <div class="footer__logo">
+          <img class="js-lazy" alt="" src="" width="189" height="118" data-src="./img/logo-white.svg"/>
+        </div>
+
+        <div class="footer__copy">2019 &copy; Академія естетичної косметологіїї</div>
+      </div>
+
+      <div class="footer__nav">
+        {{ mixins.list(
+          name = 'nav',
+          modifications = { wrap: '', item: '', link: '' },
+          list = [
+            { link: 'Переваги', href: '#features' },
+            { link: 'Події', href: '#events' },
+            { link: 'Відгуки', href: '#testimonials' },
+            { link: 'Зв’язатися з нами', href: '#contacts' }
+          ]
+        ) }}
+      </div>
+
+      <div class="footer__social">
+        {{ mixins.list(
+          name = 'social',
+          modifications = { wrap: '', item: '', link: '' },
+          list = [
+            { link: mixins.icon('instagram') },
+            { link: mixins.icon('facebook') }
+          ]
+        ) }}
+      </div>
+
+      <div class="footer__auth">
+        <div class="footer__auth-icon">{{ mixins.icon('D') }}</div>
+        Розробка сайту <a href="#">Demiweb International</a>
+      </div>
+    </div>
+  </div>
 </footer>
 <!-- end footer -->

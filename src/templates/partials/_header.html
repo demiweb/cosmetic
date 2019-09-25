@@ -1,5 +1,35 @@
 <!-- begin header -->
 <header class="header">
-  hello from header
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__nav">
+        <div class="header__nav-in">
+          {{ mixins.list(
+            name = 'nav',
+            modifications = { wrap: '', item: '', link: '' },
+            list = [
+              { link: 'Переваги', href: '#features' },
+              { link: 'Події', href: '#events' },
+              { link: 'Для моделей', href: '#for-models' },
+              { link: 'Відгуки', href: '#testimonials' },
+              { link: 'Контакти', href: '#contacts' }
+            ]
+          ) }}
+        </div>
+      </div>
+
+      <div class="header__contacts">
+        <!-- begin header-contacts -->
+        <div class="header-contacts">
+          <div class="header-contacts__link">
+            <a href="tel:+380965309540">+38 (096) - 530 - 95 - 40</a>
+          </div>
+
+          <div class="header-contacts__text">м.Вінниця, вул. Келецька,99Б</div>
+        </div>
+        <!-- end header-contacts -->
+      </div>
+    </div>
+  </div>
 </header>
 <!-- end header -->

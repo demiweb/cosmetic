@@ -1,0 +1,17 @@
+<!-- begin section -->
+<section {% if section.id %}id="{{ section.id }}"{% endif %} class="{% if not section.noClass %}section{% endif %}{% if section.mod %} {{ section.mod }}{% endif %}">
+  <div class="container">
+    {% if section.title %}
+    <div class="section__title">
+      <div class="title">{{ section.title | safe }}</div>
+    </div>
+    {% endif %}
+
+    {% if section.subttl %}
+    <div class="section__subttl">{{ section.subttl | safe }}</div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+  </div>
+</section>
+<!-- end section -->
