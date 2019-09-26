@@ -13,7 +13,7 @@ section = {
   <iframe class="js-lazy" src="" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1302.8342970781769!2d28.403337358294575!3d49.22581184652775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472d5c4397e6ce79%3A0xa60b74c9e996cf68!2z0YPQuy4g0JrQtdC70LXRhtC60LDRjywgOTksINCS0LjQvdC90LjRhtCwLCDQktC40L3QvdC40YbQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDIxMDAw!5e0!3m2!1sru!2sua!4v1569407677966!5m2!1sru!2sua" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 </div>
 
-<div class="contacts__block">
+<div class="contacts__block img">
   <!-- begin contacts-block -->
   <div class="contacts-block">
     <div class="contacts-block__title">
@@ -28,7 +28,7 @@ section = {
         name = 'contacts-list',
         modifications = { wrap: '', item: '', link: '' },
         list = [
-          { item: mixins.icon('maps-and-flags') + 'м.Вінниця
+          { item: mixins.icon('maps-and-flags') + 'м.Вінниця <br>
 вул. Келецька,99Б' },
           { item: mixins.icon('phone') + '<a href="tel:+380965309540">+38 (096) - 530 - 95 - 40</a>' }
         ]
@@ -38,7 +38,7 @@ section = {
     <div class="contacts-block__social">
       {{ mixins.list(
         name = 'social',
-        modifications = { wrap: '', item: '', link: '' },
+        modifications = { wrap: 'social--light', item: '', link: '' },
         list = [
           { item: '', link: mixins.icon('instagram') , modItem: '', modLink: '' },
           { item: '', link: mixins.icon('facebook') , modItem: '', modLink: '' }

@@ -1,6 +1,7 @@
 {%set
 section = {
   id: 'events',
+  mod: 'pb-0',
   title: 'Події',
   subttl: 'New level регулярно проводить тренінги, завдяки яким ви станете
 кращими у професіїї косметолога'
@@ -11,16 +12,16 @@ section = {
 
 {% block content %}
   <!-- begin events -->
-  <div class="events js-events">
+  <div class="events js-toggle-items">
     <div class="section-block">
       <div class="section-block__left">
         <div class="events__slider">
           <!-- begin slider -->
-          <div class="slider__wrap slider--events__wrap">
-            <div class="slider slider--events js-slider">
+          <div class="slider__wrap img slider--events__wrap">
+            <div class="slider slider--events js-slider js-toggle-items-slider" data-slider="events">
               {% for i in range(0, 5) %}
               <!-- begin slide -->
-                <div class="slide slide__img section-block__img img js-lazy js-events-img" data-background-image="./img/01_07.jpg"></div>
+                <div class="slide slide__img js-lazy js-events-img" data-background-image="./img/01_07.jpg" data-index="{{ i }}"></div>
               <!-- end slide -->
               {% endfor %}
             </div>
@@ -34,76 +35,79 @@ section = {
         </div>
       </div>
 
-      <div class="section-block__right events__content-wrap">
-        {% for i in range(0, 5) %}
-        <div class="events__content js-events-content">
-          <!-- begin events-content -->
-          <div class="events-content">
-            <div class="events-content__date">{{ mixins.icon('clock-circular-outline') }}1 Жовтня 10:00</div>
+      <div class="section-block__right">
+        <div class="events__content-wrap js-toggle-items-content">
+          {% for i in range(0, 5) %}
+          <div class="events__content" data-index="{{ i }}">
+            <!-- begin events-content -->
+            <div class="events-content">
+              <div class="events-content__date">{{ mixins.icon('clock-circular-outline') }}1 Жовтня 10:00</div>
 
-            <div class="events-content__title">
-              <div class="title title--h2">Юридичні аспекти в косметології</div>
-            </div>
-
-            <div class="events-content__text">тренінг підійде тим, хто бажає зв’язати своє життя з професією косметолог
-та задається питанням, які потрібні юридичні підтвердження, 
-аби не виникало пробем у майбутньому</div>
-
-            <div class="events-content__btns">
-              <div class="events-content__btn">
-                {{ mixins.btn(
-                  title = 'записатися на тренінг',
-                  mod = 'js-popup-open',
-                  href = false,
-                  attributes = { 'data-popup-target': 'application' }
-                ) }}
+              <div class="events-content__title">
+                <div class="title title--h2">Юридичні аспекти в косметології</div>
               </div>
-              <div class="events-content__btn">
-                {{ mixins.btn(
-                  title = 'завантажити програму',
-                  mod = 'btn--link-ttu'
-                ) }}
-              </div>
-            </div>
 
-            <div class="events-content__speakers events-speakers">
-              <div class="events-speakers__title">
-                <div class="title title--h4">Спікери:</div>
-              </div>
-              
-              <div class="events-speakers__items">             
+              <div class="events-content__text">тренінг підійде тим, хто бажає зв’язати своє життя з професією косметолог
+  та задається питанням, які потрібні юридичні підтвердження, 
+  аби не виникало пробем у майбутньому</div>
 
-                <!-- begin speaker -->
-                <div class="speaker">
-                  <div class="speaker__img">
-                    <img class="js-lazy" alt="" src="" data-src="./img/speaker.png"/>
-                  </div>
-
-                  <div class="speaker__title">Соколик Інна</div>
-
-                  <div class="speaker__subttl">адвокат в сфері 
-медичного бізнесу</div>
+              <div class="events-content__btns">
+                <div class="events-content__btn">
+                  {{ mixins.btn(
+                    title = 'записатися на тренінг',
+                    mod = 'js-popup-open',
+                    href = false,
+                    attributes = { 'data-popup-target': 'application' }
+                  ) }}
                 </div>
-                <!-- end speaker -->
-
-                <!-- begin speaker -->
-                <div class="speaker">
-                  <div class="speaker__img">
-                    <img class="js-lazy" alt="" src="" data-src="./img/speaker.png"/>
-                  </div>
-
-                  <div class="speaker__title">Олена Грабік</div>
-
-                  <div class="speaker__subttl">керуючий адвокат в адвокатському 
-бюро «Грабік Олена»</div>
+                <div class="events-content__btn">
+                  {{ mixins.btn(
+                    title = 'завантажити програму' + mixins.icon('pdf'),
+                    mod = 'btn-link btn-link--tdu',
+                    noClass = true
+                  ) }}
                 </div>
-                <!-- end speaker -->
+              </div>
+
+              <div class="events-content__speakers events-speakers">
+                <div class="events-speakers__title">
+                  <div class="title title--h4">Спікери:</div>
+                </div>
+                
+                <div class="events-speakers__items">             
+
+                  <!-- begin speaker -->
+                  <div class="speaker">
+                    <div class="speaker__img">
+                      <img class="js-lazy" alt="" src="" data-src="./img/speaker.png"/>
+                    </div>
+
+                    <div class="speaker__title">Соколик Інна</div>
+
+                    <div class="speaker__subttl">адвокат в сфері <br>
+  медичного бізнесу</div>
+                  </div>
+                  <!-- end speaker -->
+
+                  <!-- begin speaker -->
+                  <div class="speaker">
+                    <div class="speaker__img">
+                      <img class="js-lazy" alt="" src="" data-src="./img/speaker.png"/>
+                    </div>
+
+                    <div class="speaker__title">Олена Грабік</div>
+
+                    <div class="speaker__subttl">керуючий адвокат в адвокатському <br>
+  бюро «Грабік Олена»</div>
+                  </div>
+                  <!-- end speaker -->
+                </div>
               </div>
             </div>
+            <!-- end events-content -->
           </div>
-          <!-- end events-content -->
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
   </div>

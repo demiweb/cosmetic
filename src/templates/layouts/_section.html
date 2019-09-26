@@ -1,9 +1,11 @@
 <!-- begin section -->
 <section {% if section.id %}id="{{ section.id }}"{% endif %} class="{% if not section.noClass %}section{% endif %}{% if section.mod %} {{ section.mod }}{% endif %}">
+  {% if not section.noContainer %}
   <div class="container">
+  {% endif %}
     {% if section.title %}
     <div class="section__title">
-      <div class="title">{{ section.title | safe }}</div>
+      <div class="title{% if section.title.mod %} {{ section.title.mod }}{% endif %}">{{ section.title.title or section.title | safe }}</div>
     </div>
     {% endif %}
 
@@ -12,6 +14,8 @@
     {% endif %}
 
     {% block content %}{% endblock %}
+  {% if not section.noContainer %}
   </div>
+  {% endif %}
 </section>
 <!-- end section -->

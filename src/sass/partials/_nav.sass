@@ -1,11 +1,35 @@
 .nav
+  +sm
+    font-size: 1.5em
+  +xss
+    font-size: 1.2em
   li
     display: inline-block
     +notlast
-      margin-right: 95px
+      margin-right: 8%
+      +md
+        margin-right: 20px
+      +sm
+        margin-right: 0
+    +sm
+      display: block
+      margin-bottom: 15px
+    +xss
+      margin-bottom: 10px
   a
     +tr(color .3s)
     +hover
       color: $black-light
     &.is-active
       color: $black-light
+
+  &--footer
+    +sm
+      font-size: $fz-sm
+    +xss
+      font-size: $fz-sm
+    a
+      +hover
+        color: $accent
+    li
+      

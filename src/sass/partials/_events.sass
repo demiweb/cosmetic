@@ -4,5 +4,92 @@
     overflow: hidden
   &__content
     flex: 0 0 100%
-    // visibility: hidden
-    // opacity: 0
+    visibility: hidden
+    opacity: 0
+    +tr(opacity .3s, visibility .3s)
+    &.is-active
+      visibility: visible
+      opacity: 1
+  &__slider
+    position: relative
+    z-index: 3
+    padding-left: percentage(1/5)
+    +md
+      padding-left: 0
+
+.events-content
+  &__date
+    color: $accent
+    font-size: $fz-md
+    font-weight: 700
+    .icon
+      position: relative
+      top: .1em
+  &__title
+    margin-bottom: 20px
+    +md
+      margin-bottom: 10px
+  &__text
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__btns
+    +flex(flex-start, center)
+    margin-bottom: 50px
+    +xl
+      margin-bottom: 40px
+    +lg
+      margin-bottom: 30px
+      display: block
+    +md
+      margin-bottom: 15px
+  &__btn
+    +notlast
+      margin-right: 50px
+      +lg
+        margin-right: 0
+        margin-bottom: 15px
+
+.events-speakers
+  .speaker
+    +notlast
+      margin-right: 50px
+      +lg
+        margin-right: 25px
+      +md
+        margin-right: 0        
+  &__title
+    margin-bottom: 20px
+  &__items
+    +flex(flex-start, normal, row, wrap)
+
+.speaker
+  padding-right: 10px
+  +md
+    max-width: 140px
+  &__img
+    +image('speaker-img.png')
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: 50% 100%
+    width: 135px
+    height: 140px
+    position: relative
+    margin-bottom: 10px
+    img
+      position: absolute
+      max-height: 100%
+      bottom: 0
+      left: 50%
+      transform: translate(-50%, 0)
+    +lg
+      width: 110px
+      height: 110px
+    +md
+      width: 90px
+      height: 90px
+  &__title
+    font-weight: 700
+    color: $c-title
+  &__subttl
+    font-size: 13px

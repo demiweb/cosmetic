@@ -3,6 +3,8 @@
   margin-left: -15px
   margin-right: -15px
   padding-left: percentage(1/12)
+  +lg
+    padding-left: 0
   &__item
     padding-left: 15px
     padding-right: 15px
@@ -10,11 +12,16 @@
     margin-bottom: 45px
     +xl
       margin-bottom: 30px
+    +md
+      width: 50%
     +sm
       margin-bottom: 15px
+    +xs
+      width: 100%
 
 .feature
   +flex()
+  +xs
   &__icon
     +image('Circle.png')
     background-repeat: no-repeat
@@ -24,12 +31,30 @@
     color: #5c5c5c
     .icon
       font-size: 134px
+    +md
+      flex: 0 0 100px
+      .icon
+        font-size: 100px
+    +sm
+      flex: 0 0 80px
+      .icon
+        font-size: 80px
   &__content
     padding-top: 60px
     padding-left: 10px
+    +xl
+      padding-top: 50px
+    +lg
+      padding-top: 40px
+    +md
+      padding-top: 30px
+    +sm
+      padding-top: 15px
+    +xs
+      padding-top: 10px
   &__title
     font-weight: 700
-    font-size: 24px
+    font-size: $fz-md
     color: $c-title
   &__text
-    font-size: 18px
+    font-size: 1.125em

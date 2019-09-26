@@ -1,2 +1,35 @@
 .footer
   background-color: $black-light
+  &__inner
+    +flex(flex-start, center, row, wrap)
+  &__left
+    +sm
+      width: 100%
+      margin-bottom: 15px
+  &__nav
+    flex-grow: 1
+  &__auth
+    width: 100%
+    color: $gray
+    +flex(center, center, row, wrap)
+    margin-top: -30px
+    a
+      +tr(color .3s)
+      +hover
+        color: $accent
+    +lg
+      margin-top: 0
+      padding-top: 10px
+  &__auth-icon
+    color: $white
+    width: 35px
+    height: 35px
+    +flex(center, center)
+    background-color: $black
+    margin-right: 10px
+    .icon
+      font-size: 20px
+  &__logo
+  &__copy
+    font-size: 13px
+    color: $gray

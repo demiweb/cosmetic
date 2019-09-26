@@ -15,7 +15,7 @@ form = {
       type: 'text',
       placeholder: 'Ім’я',
       fieldClass: '',
-      label: { first: { title: mixins.icon('user'), noWrap: true } }
+      label: { first: { title: mixins.icon('man-user'), noWrap: true } }
     },
     {
       name: 'input',
@@ -38,7 +38,9 @@ form = {
   </div>
 
   <div class="section-block__right">
-    {% include "partials/_form.html" %}
+    <div class="section-block__form">
+      {% include "partials/_form.html" %}
+    </div>
   </div>
 </div>
 <!-- end section-block -->

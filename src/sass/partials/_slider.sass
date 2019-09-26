@@ -1,0 +1,84 @@
+.slider
+  &__wrap
+    position: relative
+  &__prev, &__next
+    text-transform: uppercase
+    color: $white
+    text-align: left
+    +tr(color .3s)
+    +hover
+      color: $accent
+  &__next
+    text-align: right
+
+  &--events
+    .slide
+      &__img
+        // padding-top: percentage(650/450)
+        padding-top: 30%
+        +cover
+    &__wrap
+      .slider
+        &__controls
+          +flex(space-between, center)
+          background-color: $black-light
+          padding: 20px 40px
+          +xl
+            padding: 20px
+          +md
+            +hidetext
+        &__next
+          .arrow
+            transform: scaleX(-1)
+  &--testimonials
+    &__wrap
+      .tns-ovh
+        padding-top: 55px
+        padding-bottom: 55px
+        padding-right: 65px
+        +sm
+          padding-right: 0
+          padding-top: 0
+          padding-bottom: 0
+      .slider
+        &__next
+          transform: scaleX(-1)
+          color: $c-text
+        &__prev
+          margin-right: 20px
+          color: $c-text
+      .slide
+        vertical-align: middle !important
+        &.tns-slide-active.is-current
+          position: relative
+          margin-right: 50px
+          .testimonials__img
+            @extend .img
+            filter: grayscale(0)
+            transform: scale(1.2) translate(15px, 0)
+            // padding-top: 120%
+
+
+
+.arrow
+  display: inline-block
+  width: 75px
+  height: 12px
+  position: relative
+  +sm
+    width: 50px
+  +before
+    width: 100%
+    height: 1px
+    background-color: currentColor
+    position: absolute
+    top: 50%
+    left: 0
+  +after
+    +icon-arrow(8, 8, 1, currentColor, 45)
+    position: absolute
+    top: 50%
+    transform: translate(0, -50%) rotate(45deg)
+    left: 0
+
+        

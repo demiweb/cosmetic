@@ -1,0 +1,80 @@
+.contacts
+  position: relative
+  padding-top: 10%
+  padding-bottom: 10%
+  overflow: hidden
+  +lg
+    padding-bottom: 20px
+    padding-top: 20%
+  +md
+    padding-top: 0
+    padding-bottom: 0
+  &__map
+    +coverdiv
+    z-index: 0
+    background-color: $c-text
+    +md
+      position: relative
+      width: auto
+      height: auto
+      padding-top: 60%
+      margin-left: -15px
+      margin-right: -15px
+    iframe
+      +coverdiv
+  &__block
+    position: relative
+    z-index: 1
+    max-width: 500px
+    +md
+      max-width: none
+      margin-left: -15px
+      margin-right: -15px
+
+
+.contacts-block
+  background-color: $black-light
+  padding: 70px
+  +xl
+    padding: 50px
+  +lg
+    padding: 40px
+  +md
+    padding: 30px
+  +sm
+    padding: 20px
+  +xs
+    padding: 15px
+  &__title
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__subttl
+    margin-bottom: 55px
+    +xl
+      margin-bottom: 40px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 20px
+  &__contacts
+    margin-bottom: 45px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+
+.contacts-list
+  .icon
+    position: relative
+    top: .15em
+    font-size: 1.2em
+    position: absolute
+    left: 0
+  li
+    position: relative
+    padding-left: 25px
+    +notlast
+      margin-bottom: 15px
+      +md
+        margin-bottom: 10px

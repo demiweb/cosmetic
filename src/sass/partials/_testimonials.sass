@@ -1,0 +1,67 @@
+.testimonials
+  position: relative
+  overflow: hidden
+  &__slider
+    position: absolute
+    top: 0
+    bottom: 0
+    left: -100px
+    width: calc(#{percentage(1065/1920)} + 100px)
+    z-index: 1
+    +flex(center, normal, column)
+    +sm
+      width: 40%
+      left: 0
+    +xs
+      width: 30%
+  &__content-in
+    max-width: calc(#{percentage(5/12)} - 30px)
+    margin-left: auto
+    +flex()
+    overflow: hidden
+    position: relative
+    +sm
+      max-width: 60%
+      padding-left: 10px
+    +xs
+      max-width: 70%
+  &__content
+    min-height: 440px
+    +flex(center, normal, column)
+    .container
+      width: 100%
+    +sm
+      min-height: 350px
+    +xs
+      min-height: 250px
+  &__controls
+    // padding-left: calc(#{percentage(7/12)} + 30px)
+    max-width: calc(#{percentage(5/12)} - 30px)
+    margin-left: auto
+    +sm
+      max-width: 60%
+      padding-left: 10px
+    +xs
+      max-width: 70%
+  &__content-item
+    flex: 0 0 100%
+    
+  &__img
+    +cover
+    padding-top: 135%
+    +tr(filter .3s)
+    filter: grayscale(100%)
+
+.testimonial-content
+  &__social
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__title
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__text
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px

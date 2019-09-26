@@ -5,8 +5,14 @@
     top: 0
     bottom: 50px
     right: 0
-    left: percentage(1335/1920)
+    left: 65%
     background-color: $black-light
+    +sm
+      left: 40%
+      bottom: auto
+      height: calc(#{$header-height-sm} + 15px)
+    +xss
+      left: 30%
   &__inner
     +flex(flex-start, normal, row, wrap)
     margin-left: -15px
@@ -14,23 +20,42 @@
     position: relative
     z-index: 1
     padding-top: $header-height
-    height: 100vh
-    height: calc(var(--vh, 1vh) * 100)
+    min-height: 100vh
+    min-height: calc(var(--vh, 1vh) * 100)
+    +lg
+      padding-top: $header-height-lg
+    +md
+      padding-top: $header-height-md
+    +sm
+      padding-top: $header-height-sm
+      min-height: 0
+      padding-bottom: 30px
   &__left, &__right
     padding-left: 15px
     padding-right: 15px
   &__left
     width: percentage(5/12)
     padding-top: 30px
+    +xl
+      width: percentage(6/12)
     +md
       padding-top: 15px
+    +sm
+      width: 100%
   &__right
     width: percentage(7/12)
+    +xl
+      width: percentage(6/12)
+    +sm
+      // width: 100%
+      display: none
   &__img
     +cover
     // padding-top: 100%
     display: block
     height: 100%
+    +sm
+      padding-top: 100%
   &__logo
     margin-bottom: 30px
     +md
@@ -46,9 +71,18 @@
   &__btns
     margin-bottom: 10%
     +flex(flex-start, center)
+    +lg
+      display: block
+    +sm
+      margin-bottom: 20px
   &__btn
     &:first-child
       margin-right: 50px
+      +xl
+        margin-right: 10px
+      +lg
+        margin-right: 0
+        margin-bottom: 15px
   &__social
     .social
       display: inline-block

@@ -1,6 +1,18 @@
 .section
   padding-top: 65px
   padding-bottom: 65px
+  +xl
+    padding-top: 55px
+    padding-bottom: 55px
+  +lg
+    padding-top: 50px
+    padding-bottom: 50px
+  +md
+    padding-top: 40px
+    padding-bottom: 40px
+  +sm
+    padding-top: 30px
+    padding-bottom: 30px
   &__title
     margin-bottom: 20px
     text-align: center
@@ -19,6 +31,9 @@
     +md
       margin-bottom: 20px
 
+  &--dark
+    background-color: $black-light
+
 .section-block
   +flex(flex-start, normal, row, wrap)
   margin-left: -15px
@@ -33,10 +48,12 @@
       background-color: $black-light
       position: absolute
       top: 80px
-      left: 0
+      left: 15px
       height: 60%
       width: 50%
       z-index: 0
+      +md
+        display: none
     +after
       +image('black-pattern.png')
       background-repeat: repeat
@@ -47,6 +64,14 @@
       height: 60%
       width: 50%
       left: 75px
+      +md
+        display: none
+    +lg
+      width: percentage(6/12)
+      padding-top: 15px
+    +sm
+      width: 100%
+      padding-top: 0
 
   &__right
     padding-top: 35px
@@ -54,3 +79,20 @@
     padding-right: 15px
     width: percentage(6/12)
     margin-left: percentage(1/12)
+    +flex(center, normal, column)
+    +lg
+      margin-left: 0
+    +sm
+      width: 100%
+  &__img
+    +cover
+    padding-top: 111%
+    z-index: 3
+    margin-left: percentage(1/5)
+    +md
+      margin-left: 0
+  &__form
+    max-width: 330px
+    +sm
+      margin-left: auto
+      margin-right: auto
