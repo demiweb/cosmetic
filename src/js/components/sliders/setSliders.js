@@ -93,11 +93,10 @@ export default class MySlider {
   }
 
   init() {
+    this._getOptions();
+    this._initSliders();
     if (this.noSliders) return;
 
-    this._getOptions();
-
-    this._initSliders();
     setTimeout(() => {
       this._initTogglers();
     }, 200);
