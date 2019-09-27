@@ -21,7 +21,10 @@
     z-index: 1
     padding-top: $header-height
     min-height: 100vh
-    min-height: calc(var(--vh, 1vh) * 100)
+    // padding-bottom: 30px
+    .is-ie &
+      min-height: 0
+      height: 100vh
     +lg
       padding-top: $header-height-lg
     +md
@@ -29,13 +32,16 @@
     +sm
       padding-top: $header-height-sm
       min-height: 0
-      padding-bottom: 30px
+      // padding-bottom: 30px
+      .is-ie &
+        height: auto
   &__left, &__right
     padding-left: 15px
     padding-right: 15px
   &__left
     width: percentage(5/12)
     padding-top: 30px
+    padding-bottom: 30px
     +xl
       width: percentage(6/12)
     +md
@@ -54,27 +60,33 @@
     // padding-top: 100%
     display: block
     height: 100%
+    opacity: 0
     +sm
       padding-top: 100%
   &__logo
     margin-bottom: 30px
+    opacity: 0
     +md
       margin-bottom: 15px
   &__text
     margin-bottom: 60px
+    opacity: 0
     +xl
       margin-bottom: 50px
     +lg
       margin-bottom: 40px
     +md
       margin-bottom: 20px
-  &__btns
-    margin-bottom: 10%
-    +flex(flex-start, center)
-    +lg
-      display: block
+  &__left-top
+    margin-bottom: 30%
     +sm
       margin-bottom: 20px
+  &__btns    
+    +flex(flex-start, center)
+    opacity: 0
+    +lg
+      display: block
+    
   &__btn
     &:first-child
       margin-right: 50px
@@ -84,6 +96,7 @@
         margin-right: 0
         margin-bottom: 15px
   &__social
+    opacity: 0
     .social
       display: inline-block
       position: relative

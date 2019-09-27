@@ -1,7 +1,7 @@
 {%set
 section = {
   id: 'events',
-  mod: 'pb-0',
+  mod: 'pb-0 overflow-hidden',
   title: 'Події',
   subttl: 'New level регулярно проводить тренінги, завдяки яким ви станете
 кращими у професіїї косметолога'
@@ -64,7 +64,8 @@ section = {
                   {{ mixins.btn(
                     title = 'завантажити програму' + mixins.icon('pdf'),
                     mod = 'btn-link btn-link--tdu',
-                    noClass = true
+                    noClass = true,
+                    attributes = { download: '' }
                   ) }}
                 </div>
               </div>

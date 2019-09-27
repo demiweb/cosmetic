@@ -3,31 +3,36 @@
   <div class="container">
     <div class="hero__inner">
       <div class="hero__left">
-        <div class="hero__logo">
-          <img class="js-lazy" alt="" src="" width="385" height="" data-src="./img/logo.svg"/>
-        </div>
-
-        <div class="hero__text">простір для вдосконалення навичок та розвитку 
-косметологів Вінниці та України. </div>
-
-        <div class="hero__btns">
-          <div class="hero__btn">
-            {{ mixins.btn(
-              title = 'Хочу на тренінг',
-              mod = 'js-popup-open',
-              href = false,
-              attributes = { 'data-popup-target': 'application' }
-            ) }}
+        <div class="hero__left-top">
+          {% if hero.logo %}
+          <div class="hero__logo">
+            {% if hero.logo === 'logo' %}
+            <img class="js-lazy" alt="" src="" width="385" height="" data-src="./img/logo.svg"/>
+            {% elseif hero.logo === 'thanks' %}
+            <img class="js-lazy" alt="" src="" data-src="./img/check-square.png"/>
+            {% endif %}
           </div>
+          {% endif %}
 
-          <div class="hero__btn">
-            {{ mixins.btn(
-              title = 'дізнатися про академію',
-              noClass = true,
-              mod = 'btn-link',
-              href = '#features'
-            ) }}
+          {% if hero.text %}
+          <div class="hero__text">{{ hero.text | safe }}</div>
+          {% endif %}
+
+          {% if hero.btns %}
+          <div class="hero__btns">
+            {% for i in hero.btns %}
+            <div class="hero__btn">
+              {{ mixins.btn(
+                title = i.title,
+                mod = i.mod,
+                href = i.href,
+                attributes = i.attributes,
+                noClass = i.noClass
+              ) }}
+            </div>
+            {% endfor %}
           </div>
+          {% endif %}
         </div>
 
         <div class="hero__social">
@@ -44,7 +49,9 @@
       </div>
 
       <div class="hero__right">
-        <div class="hero__img img js-lazy" data-background-image="./img/01_03.jpg"></div>
+        {% if hero.img %}
+          <div class="hero__img img no-animation js-lazy" data-background-image="./img/{{ hero.img }}"></div>
+        {% endif %}
       </div>
     </div>
   </div>

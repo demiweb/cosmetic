@@ -7,9 +7,16 @@
     visibility: hidden
     opacity: 0
     +tr(opacity .3s, visibility .3s)
+    .events-content
+      opacity: 0
+      transform: translate(0, 30px)
     &.is-active
       visibility: visible
       opacity: 1
+      .events-content
+        visibility: visible
+        opacity: 1
+        transform: translate(0, 0)
   &__slider
     position: relative
     z-index: 3
@@ -18,6 +25,7 @@
       padding-left: 0
 
 .events-content
+  +tr(opacity .7s,transform .7s)
   &__date
     color: $accent
     font-size: $fz-md

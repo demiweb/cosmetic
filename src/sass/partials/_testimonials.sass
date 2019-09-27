@@ -35,7 +35,6 @@
     +xs
       min-height: 250px
   &__controls
-    // padding-left: calc(#{percentage(7/12)} + 30px)
     max-width: calc(#{percentage(5/12)} - 30px)
     margin-left: auto
     +sm
@@ -45,14 +44,28 @@
       max-width: 70%
   &__content-item
     flex: 0 0 100%
+    visibility: hidden
+    opacity: 0
+    +tr(opacity .3s, visibility .3s)
+    .testimonial-content
+      opacity: 0
+      transform: translate(0, 30px)
+    &.is-active
+      visibility: visible
+      opacity: 1
+      .testimonial-content
+        visibility: visible
+        opacity: 1
+        transform: translate(0, 0)
     
   &__img
     +cover
     padding-top: 135%
-    +tr(filter .3s)
+    +tr(filter .3s, transform .3s)
     filter: grayscale(100%)
 
 .testimonial-content
+  +tr(opacity .7s,transform .7s)
   &__social
     margin-bottom: 15px
     +md

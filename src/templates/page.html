@@ -1,5 +1,25 @@
 ---
 title: Index page
+page: home
+hero: {
+  logo: 'logo',
+  text: 'простір для вдосконалення навичок та розвитку  косметологів Вінниці та України.',
+  btns: [
+    {
+      title: 'Хочу на тренінг',
+      mod: 'js-popup-open',
+      href: false,
+      attributes: { 'data-popup-target': 'application' }
+    },
+    {
+      title: 'дізнатися про академію',
+      noClass: true,
+      mod: 'btn-link js-scroll-to',
+      href: '#features'
+    }
+  ],
+  img: '01_03.jpg'
+}
 ---
 {% extends "layouts/_layout.html" %}
 

@@ -1,7 +1,8 @@
 import Slider from './Slider';
-import setLazy from '../setLazy';
-import ItemsToggler from './toggleItems';
-import { IS_ACTIVE } from '../../constants';
+import ItemsToggler from './ItemsToggler';
+import setActiveItems from './setActiveItems';
+import { isTouch } from '../../helpers';
+import classNames from './classNames';
 
 export default class MySlider {
   constructor(slider) {
@@ -9,26 +10,26 @@ export default class MySlider {
   }
 
   _getOptions() {
-    this.getOptions = ({ container, prevButton, nextButton }) => ({
+    this.getOptions = ({
+      container, prevButton, nextButton, onInit,
+    }) => ({
       events: {
         container,
         prevButton,
         nextButton,
+        onInit,
         items: 1,
-        mouseDrag: true,
-        loop: false,
-        onInit: setLazy,
+        loop: true,
         nav: false,
       },
       testimonials: {
         container,
         prevButton,
         nextButton,
+        onInit,
         items: 1,
-        mouseDrag: true,
-        onInit: setLazy,
         nav: false,
-        loop: false,
+        loop: true,
         gutter: 0,
         responsive: {
           768: {
@@ -50,11 +51,13 @@ export default class MySlider {
 
   _initSliders() {
     this.containers = [...document.querySelectorAll(this.sliderClass)];
-    if (!this.containers) { this.noSliders = true; return; }
+    if (!this.containers.length) { this.noSliders = true; return; }
 
     this.sliders = [];
 
     this.containers.forEach((container) => {
+      if (container.classList.contains(classNames.plugin.container)) return;
+
       const slider = new Slider(container, this.getOptions);
       slider.init();
       this.sliders.push(slider);
@@ -62,13 +65,13 @@ export default class MySlider {
   }
 
   _initTogglers() {
-    this.togglerContainers = [...document.querySelectorAll(`.${MySlider.classNames.toggler.wrap}`)];
+    this.togglerContainers = [...document.querySelectorAll(`.${classNames.toggler.wrap}`)];
     if (!this.togglerContainers.length) return;
 
     this.togglers = [];
 
     this.togglerContainers.forEach((container) => {
-      const itemsToggler = new ItemsToggler(container, MySlider.classNames.toggler);
+      const itemsToggler = new ItemsToggler(container);
       itemsToggler.init();
       this.togglers.push(itemsToggler);
     });
@@ -76,38 +79,29 @@ export default class MySlider {
 
   _toggleSlides() {
     this.sliders.forEach((slider, i) => {
-      slider.tns.events.on('transitionEnd', (info) => {
+      const event = isTouch ? 'transitionEnd' : 'transitionStart';
+
+      slider.tns.events.on(event, () => {
         const { slides, items, content } = this.togglers[i];
+        const activeSlideClass = classNames.plugin.activeSlide;
 
-        const activeSlides = slides.filter((slide) => slide.classList.contains('tns-slide-active'));
-        console.log(activeSlides);
-        const activeSlide = activeSlides[activeSlides.length - 1];
-        const index = activeSlide.getAttribute('data-index');
-        const activeItem = content.querySelector(`[data-index="${index}"]`);
-
-        items.forEach((item) => item.classList.remove(IS_ACTIVE));
-        activeItem.classList.add(IS_ACTIVE);
+        setActiveItems({
+          slides, items, content, activeSlideClass,
+        });
       });
     });
   }
 
-
   init() {
     if (this.noSliders) return;
 
-
     this._getOptions();
 
-    this._initTogglers();
     this._initSliders();
+    setTimeout(() => {
+      this._initTogglers();
+    }, 200);
+
     this._toggleSlides();
   }
 }
-
-MySlider.classNames = {
-  toggler: {
-    wrap: 'js-toggle-items',
-    slider: 'js-toggle-items-slider',
-    content: 'js-toggle-items-content',
-  },
-};

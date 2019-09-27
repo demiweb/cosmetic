@@ -6,6 +6,7 @@
   right: 0
   top: 0
   +tr(background-color .3s)
+  opacity: 0
   &__inner
     +flex(space-between)
     height: $header-height
@@ -76,6 +77,10 @@
       padding-top: 10px
       padding-bottom: 10px
       align-items: center
+    .nav
+      a
+        +hover
+          color: $accent
 
 
 

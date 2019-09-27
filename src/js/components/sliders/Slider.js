@@ -1,21 +1,26 @@
 import { tns } from 'tiny-slider/src/tiny-slider';
+import setLazy from '../setLazy';
+import classNames from './classNames';
 
 export default class Slider {
   constructor(container, getOptions) {
     this.container = container;
     this.name = container.dataset.slider;
-    this.wrap = container.closest('.slider__wrap');
+    this.wrap = container.closest(`.${classNames.slider.wrap}`);
     this.controls = {
-      prev: this.wrap.querySelector('.js-slider-prev'),
-      next: this.wrap.querySelector('.js-slider-next'),
+      prev: this.wrap.querySelector(`.${classNames.slider.prev}`),
+      next: this.wrap.querySelector(`.${classNames.slider.next}`),
     };
     this.slides = [...container.querySelectorAll('.slide')];
+
+    this.nameMod = undefined; // if need to reinit slider with different options
 
     this.options = getOptions({
       container,
       prevButton: this.controls.prev,
       nextButton: this.controls.next,
-    })[this.name];
+      onInit: setLazy,
+    })[this.nameMod || this.name];
   }
 
   _initPlugin() {

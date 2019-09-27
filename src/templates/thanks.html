@@ -1,0 +1,20 @@
+---
+title: thanks
+page: thanks
+hero: {
+  logo: 'thanks',
+  text: 'Дякуємо за заявку! Наш менеджер зв’яжеться з вами у найближчий час',
+  img: 'hero-thanks.jpg',
+  btns: [
+    {
+      title: 'На головну',
+      href: '/'
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+{% endblock %}

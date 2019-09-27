@@ -52,26 +52,27 @@ Burger.classNames = {
   menu: 'js-menu',
 };
 
-export default function toggleMenu() {
-  const burger = new Burger();
-  burger.onToggle = () => {
-    document.body.classList.toggle(NO_SCROLL);
-  };
-  burger.onClose = () => {
-    document.body.classList.remove(NO_SCROLL);
-  };
-  burger.init();
 
-  // close menu
-  const close = 'js-menu-close';
+const burger = new Burger();
+burger.onToggle = () => {
+  document.body.classList.toggle(NO_SCROLL);
+};
+burger.onClose = () => {
+  document.body.classList.remove(NO_SCROLL);
+};
+// burger.init();
 
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest(`.${close}`);
-    const menu = e.target.classList.contains('js-menu') ? e.target : null;
-    const closeBtn = btn || menu;
-    if (!closeBtn) return;
+// close menu
+const close = 'js-menu-close';
 
-    e.preventDefault();
-    burger.close();
-  });
-}
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest(`.${close}`);
+  const menu = e.target.classList.contains('js-menu') ? e.target : null;
+  const closeBtn = btn || menu;
+  if (!closeBtn) return;
+
+  e.preventDefault();
+  burger.close();
+});
+
+export default burger;

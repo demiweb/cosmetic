@@ -1,0 +1,39 @@
+{%set
+form = {
+  fields: [
+    {
+      name: 'input',
+      type: 'text',
+      placeholder: 'Ім’я',
+      fieldClass: '',
+      label: { first: { title: mixins.icon('man-user'), noWrap: true } }
+    },
+    {
+      name: 'input',
+      type: 'tel',
+      placeholder: '+38 (_ _ _ ) - _ _ _ - _ _ - _ _',
+      fieldClass: '',
+      label: { first: { title: mixins.icon('phone'), noWrap: true } }
+    },
+    {
+      name: 'input',
+      type: 'text',
+      placeholder: 'Який тренінг плануєте відвідати?',
+      fieldClass: '',
+      label: { first: { title: mixins.icon('calendar'), noWrap: true } }
+    }
+  ]
+}
+%}
+
+<!-- begin popup -->
+<div class="popup js-popup" data-popup="application">
+  <div class="popup__inner">
+    <button class="popup__close js-popup-close"></button>
+
+    <div class="popup__form">
+      {% include "partials/_form.html" %}
+    </div>
+  </div>
+</div>
+<!-- end popup -->

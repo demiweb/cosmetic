@@ -16,12 +16,12 @@ section = {
 
 {% block content %}
 <!-- begin testimonials -->
-<div class="testimonials slider__wrap slider--testimonials__wrap">
+<div class="testimonials slider__wrap slider--testimonials__wrap js-toggle-items">
   <div class="testimonials__slider">
-      <div class="slider slider--testimonials js-slider" data-slider="testimonials">
+      <div class="slider slider--testimonials js-slider js-toggle-items-slider" data-slider="testimonials">
         {% for i in range(0, 8) %}
         <!-- begin slide -->
-        <div class="slide">
+        <div class="slide" data-index="{{ i }}">
           <div class="testimonials__img js-lazy" data-background-image="./img/01_13.jpg"></div>
         </div>
         <!-- end slide -->
@@ -31,9 +31,9 @@ section = {
 
   <div class="testimonials__content">
     <div class="container">
-      <div class="testimonials__content-in">
+      <div class="testimonials__content-in js-toggle-items-content">
         {% for i in range(0, 8) %}
-        <div class="testimonials__content-item">
+        <div class="testimonials__content-item" data-index="{{ i }}">
           <!-- begin testimonial-content -->
           <div class="testimonial-content">
             <div class="testimonial-content__social">
