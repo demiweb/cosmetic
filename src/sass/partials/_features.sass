@@ -21,8 +21,12 @@
       width: 100%
 
 .feature
+  $this: &
   +flex()
   +xs
+  +hover
+    #{$this}__icon
+      +image('Circle-hover.png')
   &__icon
     +image('Circle.png')
     background-repeat: no-repeat
@@ -31,7 +35,7 @@
     flex: 0 0 110px
     color: #5c5c5c
     .icon
-      font-size: 134px
+      font-size: 134px    
     +md
       flex: 0 0 100px
       .icon
