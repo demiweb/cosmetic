@@ -1,0 +1,52 @@
+{%set
+form = {
+  title: 'Залиште відгук',
+  subttl: 'залиште відгук про нашу роботу та ми обов’язково поділимося ним з іншими',
+  btn: {
+    title: 'Залишити відгук'
+  },
+  fields: [
+    {
+      name: 'input',
+      type: 'text',
+      placeholder: 'Ім’я',
+      fieldClass: '',
+      label: { first: { title: mixins.icon('man-user'), noWrap: true } }
+    },
+    {
+      name: 'input',
+      type: 'tel',
+      placeholder: '+38 (_ _ _ ) - _ _ _ - _ _ - _ _',
+      fieldClass: '',
+      label: { first: { title: mixins.icon('phone'), noWrap: true } }
+    },
+    {
+      name: 'textarea',
+      type: '',
+      placeholder: 'Як вам наш тренінг?',
+      fieldClass: 'js-textarea',
+      wrapMod: 'form__field-sm'
+    },
+    {
+      name: 'attachment',
+      type: 'file',
+      mod: '',
+      placeholder: '',
+      fieldClass: '',
+      label: { first: { title: mixins.icon('attachment') + 'Додайте ваше фото', span: true } }
+    }
+  ]
+}
+%}
+
+<!-- begin popup -->
+<div class="popup js-popup" data-popup="review">
+  <div class="popup__inner">
+    <button class="popup__close js-popup-close"></button>
+
+    <div class="popup__form">
+      {% include "partials/_form.html" %}
+    </div>
+  </div>
+</div>
+<!-- end popup -->

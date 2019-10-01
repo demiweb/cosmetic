@@ -34,7 +34,7 @@
       min-height: 350px
     +xs
       min-height: 250px
-  &__controls
+  &__controls, &__btn
     max-width: calc(#{percentage(5/12)} - 30px)
     margin-left: auto
     +sm
@@ -42,6 +42,19 @@
       padding-left: 10px
     +xs
       max-width: 70%
+  &__controls
+    margin-bottom: 15px
+  &__btn
+    +xs
+      max-width: none
+      padding-left: 0
+      text-align: center
+      margin-top: 100px
+      margin-bottom: 5px
+      position: relative
+    +xss
+      margin-top: 70px
+
   &__content-item
     flex: 0 0 100%
     visibility: hidden

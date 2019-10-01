@@ -1,6 +1,6 @@
 {% macro input(name, mod, type = 'text', placeholder, value, options, fieldClass, fieldAttributes, attributes, label, isInline) %}
 <!-- begin {{ name }} -->
-{% if name === 'checkbox' or name === 'radio' %}
+{% if name === 'checkbox' or name === 'radio' or name === 'attachment' %}
 <label class="{{ name }}{% if mod %} {{mod}}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
 {% elseif isInline %}
 <span class="{{ name }}{% if mod %} {{mod}}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
@@ -16,7 +16,7 @@
   <label>{{ label.first.title or label.first | safe }}</label>
   {% endif %}
 
-  {% if name === 'input' or name === 'radio' or name === 'checkbox' %}
+  {% if name === 'input' or name === 'radio' or name === 'checkbox' or name === 'attachment' %}
   <input {% if fieldClass %}class="{{ fieldClass }}"{% endif %} type="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %} {% if value %}value="{{value}}"{% endif %} {% for attr, attrValue in fieldAttributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
 
   {% elseif name === 'select' %}
@@ -39,7 +39,7 @@
   <label>{{ label.last.title or label.last | safe }}</label>
   {% endif %}
 
-{% if name === 'checkbox' or name === 'radio' %}
+{% if name === 'checkbox' or name === 'radio' or name === 'attachment' %}
 </label>
 {% elseif isInline %}
 </span>

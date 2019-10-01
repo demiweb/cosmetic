@@ -17,6 +17,7 @@ import scrollTo from './components/scrollTo';
 import setPopups from './components/setPopups';
 import animateOnScroll from './components/animateOnScroll';
 import setAnimations from './components/animations/setAnimations';
+import setTextareaHeight from './components/setTextareaHeight';
 
 document.addEventListener('DOMContentLoaded', () => {
   smoothscroll.polyfill();
@@ -34,4 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setPopups();
   animateOnScroll();
   setAnimations();
+  setTextareaHeight();
 });

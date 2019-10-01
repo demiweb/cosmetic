@@ -18,6 +18,10 @@
       margin-bottom: 30px
     +md
       margin-bottom: 15px
+  &__field-sm
+    margin-bottom: 20px
+    +lg
+      margin-bottom: 20px
 
 .input, .textarea
   position: relative
@@ -32,3 +36,26 @@
     padding: 0 5px
     padding-left: 25px
     width: 100%
+    +tr(border-color .3s)
+    &:focus
+      border-color: $accent
+  textarea
+    border: 1px solid  $gray-light
+    min-height: 100px
+    overflow: hidden
+    padding-top: 10px
+    padding-bottom: 10px
+
+.attachment
+  position: relative
+  text-align: left
+  display: block
+  cursor: pointer
+  .icon
+    font-size: 1.2em
+    position: relative
+    top: .2em
+  input
+    visibility: hidden
+    opacity: 0
+    position: absolute

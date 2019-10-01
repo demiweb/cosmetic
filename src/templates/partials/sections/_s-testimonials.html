@@ -65,6 +65,15 @@ section = {
         <button class="slider__prev prev js-slider-prev"><i class="arrow"></i></button>
         <button class="slider__next next js-slider-next"><i class="arrow"></i></button>
       </div>
+
+      <div class="testimonials__btn">
+        {{ mixins.btn(
+          title = 'Залишити відгук',
+          mod = 'btn--white js-popup-open',
+          href = false,
+          attributes = { 'data-popup-target': 'review' }
+        ) }}
+      </div>
     </div>
   </div>
 </div>

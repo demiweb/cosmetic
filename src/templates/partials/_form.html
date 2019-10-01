@@ -2,17 +2,29 @@
 <div class="form">
   <form>
     <div class="form__title">
-      <div class="title title--h2">Форма заявки</div>
+      <div class="title title--h2">
+        {% if form.title %}
+        {{ form.title | safe }}
+        {% else %}
+        Форма заявки
+        {% endif %}
+      </div>
     </div>
 
-    <div class="form__subttl">залиште ваші дані та наш менеджер 
-зв’яжеться з вами у найближчий час</div>
+    <div class="form__subttl">
+      {% if form.subttl %}
+        {{ form.subttl | safe }}
+        {% else %}
+        залиште ваші дані та наш менеджер 
+зв’яжеться з вами у найближчий час
+        {% endif %}
+    </div>
 
     {% for i in form.fields %}
-    <div class="form__field">
+    <div class="form__field{% if i.wrapMod %} {{ i.wrapMod }}{% endif %}">
       {{ mixins.input(
         name = i.name,
-        mod = '',
+        mod = i.mod,
         type = i.type,
         placeholder = i.placeholder,
         value = '',
@@ -24,7 +36,7 @@
 
     <div class="form__field">
       {{ mixins.btn(
-        title = 'Залишити заявку',
+        title = form.btn.title or 'Залишити заявку',
         mod = '',
         href = false
       ) }}
