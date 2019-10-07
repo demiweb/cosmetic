@@ -46,6 +46,16 @@ export default class MySlider {
           },
         },
       },
+      testimonials_one_item: {
+        container,
+        prevButton,
+        nextButton,
+        onInit,
+        items: 1,
+        nav: false,
+        loop: true,
+        gutter: 0,
+      },
     });
   }
 

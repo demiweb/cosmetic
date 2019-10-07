@@ -42,7 +42,6 @@
         padding-right: 65px
         +md
           padding-right: 50px
-        +sm
           padding-right: 4px
           padding-top: 40px
           padding-bottom: 40px
@@ -62,8 +61,16 @@
             @extend .img
             filter: grayscale(0)
             transform: scale(1.2) translate(15px, 0)
-            +sm
+            +md
               transform: scale(1) translate(0, 0)
+          &.is-single-item
+            margin-right: 100px
+            .testimonials__img
+              background-color: transparent
+              transform: scale(1) translate(0, 0)
+              +before
+                width: 100px
+                height: 100px
 
 
 

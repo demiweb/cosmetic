@@ -73,9 +73,24 @@
     
   &__img
     +cover
-    padding-top: 135%
+    // padding-top: 135%
+    padding-top: 230px
     +tr(filter .3s, transform .3s)
     filter: grayscale(100%)
+    +md
+      padding-top: 400px
+    +xs
+      padding-top: 135%
+
+    .is-single-item &
+      background-size: contain
+      // background-color: transparent !important
+      background-position: 100% 50%
+      padding-top: 400px
+      +sm
+        padding-top: 320px
+      +xs
+        padding-top: 135%
 
 .testimonial-content
   +tr(opacity .7s,transform .7s)
